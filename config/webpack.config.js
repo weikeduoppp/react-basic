@@ -496,15 +496,11 @@ module.exports = function(webpackEnv) {
             },
             {
               test: /\.styl$/,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                  modules: true,
-                  getLocalIdent: getCSSModuleLocalIdent
-                },
-                'stylus-loader'
-              )
+              use: [
+                require.resolve('style-loader'),
+                require.resolve('css-loader'),
+                require.resolve('stylus-loader')
+              ]
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
