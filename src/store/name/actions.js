@@ -1,8 +1,8 @@
-import { DEFAULT } from './actionTypes'
+import * as contants from './actionTypes'
 import { makeActionCreator } from '../util'
 import axios from 'axios'
 
-export const setName = makeActionCreator(DEFAULT, 'payload')
+export const setName = makeActionCreator(contants.DEFAULT, 'payload')
 
 export const fetchName = name => dispatch => {
   return axios
