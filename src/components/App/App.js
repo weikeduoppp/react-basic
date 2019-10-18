@@ -23,7 +23,8 @@ function App({ name, setName, fetchName }) {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    name: state.name
+    //immutable取值 get('cn') 嵌套数据 getIn
+    name: state.name.get('cn')
   }
 }
 
