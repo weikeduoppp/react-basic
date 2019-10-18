@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux-immutable'
 import nameReducer from './name/reducer'
 
 const reducers = combineReducers({
-  name: nameReducer
+  user: nameReducer
 })
 
 export default reducers

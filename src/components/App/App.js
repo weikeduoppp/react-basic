@@ -1,7 +1,7 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { setName, fetchName } from '../../store/name/actions'
-import './App.styl'
+import React from 'react';
+import { connect } from 'react-redux';
+import { setName, fetchName } from '../../store/name/actions';
+import './App.styl';
 
 function App({ name, setName, fetchName }) {
   return (
@@ -18,17 +18,17 @@ function App({ name, setName, fetchName }) {
         </a>
       </header>
     </div>
-  )
+  );
 }
 
 const mapStateToProps = (state, ownProps) => {
   return {
     //immutable取值 get('cn') 嵌套数据 getIn
-    name: state.name.get('cn')
-  }
-}
+    name: state.getIn(['user', 'cn'])
+  };
+};
 
 export default connect(
   mapStateToProps,
   { setName, fetchName }
-)(App)
+)(App);
